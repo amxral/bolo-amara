@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        h1 {
+            text-align: center;
+            color: #a9288c;
+            background-color: #00baf3;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+        th, td {
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #a9288c;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #00baf3;
+            color: #ffffff;
+        }
+        tr:nth-child(odd) {
+            background-color: #a9288c;
+            color: #ffffff;
+        }
+        ul, p {
+            color: #000000;
+        }
+        h2 {
+            color: #00baf3;
+            border-bottom: 2px solid #a9288c;
+            padding-bottom: 5px;
+        }
+        .important-note {
+            color: #a9288c;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #00baf3;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #a9288c;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #00baf3;
+        }
+    </style>
+    <title>Tabela de Preços - Bolos</title>
+</head>
+<body>
+
+    <h1>Tabela de Preços - Bolos</h1>
+
+    <form action="processa_encomenda.php" method="POST">
+        <h2>Escolha o Tamanho do Bolo</h2>
+        <select name="tamanho" required>
+            <option value="10cm - 110,00">10cm (8 a 10 fatias) - R$ 110,00</option>
+            <option value="15cm - 140,00">15cm (12 a 15 fatias) - R$ 140,00</option>
+            <option value="20cm - 190,00">20cm (20 a 24 fatias) - R$ 190,00</option>
+            <option value="25cm - 220,00">25cm (35 a 37 fatias) - R$ 220,00</option>
+            <option value="30cm - 260,00">30cm (50 a 55 fatias) - R$ 260,00</option>
+            <option value="35cm - 340,00">35cm (70 a 90 fatias) - R$ 340,00</option>
+        </select>
+
+        <h2>Escolha a Massa (Escolher 1)</h2>
+        <select name="massa" required>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Baunilha">Baunilha</option>
+            <option value="Mista">Mista</option>
+        </select>
+
+        <h2>Escolha os Recheios Tradicionais (Escolher até 2)</h2>
+        <select name="recheios[]" multiple required>
+            <option value="Beijinho">Beijinho</option>
+            <option value="Brigadeiro">Brigadeiro</option>
+            <option value="Ninho">Ninho</option>
+            <option value="Limão">Limão</option>
+            <option value="Brigadeiro Branco">Brigadeiro Branco</option>
+            <option value="Amendoim">Amendoim</option>
+        </select>
+
+        <h2>Recheios Adicionais (Opcional)</h2>
+        <select name="recheios_adicionais[]" multiple>
+            <option value="Doce de Leite">Doce de Leite</option>
+            <option value="Nutella">Nutella</option>
+            <option value="Oreo">Oreo</option>
+            <option value="Crocante">Crocante</option>
+            <option value="Morango">Morango</option>
+            <option value="Maracujá">Maracujá</option>
+            <option value="Uva">Uva</option>
+            <option value="Ameixas">Ameixas</option>
+            <option value="Abacaxi">Abacaxi</option>
+            <option value="Geleia de Frutas Amarelas">Geleia de Frutas Amarelas</option>
+            <option value="Geleia de Morango">Geleia de Morango</option>
+            <option value="Geleia de Frutas Vermelhas">Geleia de Frutas Vermelhas</option>
+        </select>
+
+        <h2>Observações sobre a Encomenda</h2>
+        <textarea name="observacoes" rows="4" placeholder="Digite aqui alguma observação adicional..."></textarea>
+
+        <input type="submit" value="Enviar Encomenda">
+    </form>
+
+</body>
+</html>
